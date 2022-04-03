@@ -1,0 +1,42 @@
+Problem:-
+
+Maximum and minimum of an array using minimum number of comparisons
+
+Input  : arr[] = {2,5,8,6,3,4,9,7,3}
+Output : max = 9
+	   min = 2
+
+SOLUTION :-
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    vector<int> v = {2,5,8,6,3,4,9,7,3};
+    
+    int mini = 0;
+    int maxi = 0;
+    
+    if(v[0] < v[1]){
+        mini = v[0];
+        maxi = v[1];
+    }
+    else{
+        mini = v[1];
+        maxi = v[0];
+    }
+    
+    for(int i=2;i<v.size();i++){
+        if(v[i] > maxi)
+            maxi = v[i];
+        if(v[i] < mini)
+            mini = v[i];
+    }
+    
+    cout<<"max = "<<maxi<<endl;
+    cout<<"min = "<<mini<<endl;
+    
+    return 0;
+}
